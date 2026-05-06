@@ -28,7 +28,8 @@ export async function GET(req: Request) {
     return NextResponse.json(rows);
   }
   const exhibitorUser = await User.findById(session.user.id).lean();
-  const exhibitor = await Exhibitor.findOne({ company_name: exhibitorUser?.company }).lean();
+  const companyName = Array.isArray(exhibitorUser) ? exhibitorUser[0]?.company : exhibitorUser?.company;
+  const exhibitor = await Exhibitor.findOne({ company_name: companyName }).lean();
   const rows = await MeetingRequest.find({ exhibitor_id: exhibitor?._id }).populate("buyer_id", "username").lean();
   return NextResponse.json(rows);
 }
