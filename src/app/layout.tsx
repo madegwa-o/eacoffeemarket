@@ -45,33 +45,35 @@ export const viewport: Viewport = {
 // Metadata
 // -----------------
 export const metadata: Metadata = {
-    metadataBase: new URL("https://paysuit.aistartupclub.com"),
+    metadataBase: new URL("https://eacoffeemarket.com"),
 
     title: {
-        default: "Paysuit — M-Pesa Payments for Developers",
-        template: "%s | Paysuit Fintech",
+        default: "East Africa Coffee Market — Exhibitor Directory",
+        template: "%s | East Africa Coffee Market",
     },
 
     description:
-        "Add M-Pesa payments to your applications in minutes. One API, instant settlement, zero bureaucracy.",
+        "Discover premium coffee exhibitors, roasters, and suppliers from across East Africa. Connect with specialty coffee vendors and traders.",
 
-    applicationName: "Paysuit",
+    applicationName: "East Africa Coffee Market",
     generator: "Next.js",
     manifest: "/manifest.json",
 
     keywords: [
-        "Paysuit",
-        "Paysuit Fintech",
-        "M-Pesa API",
-        "Daraja API",
-        "payments API",
-        "mobile money integration",
-        "developer payments",
-        "payments infrastructure",
-        "African fintech",
-        "fintech",
-        "M-Pesa STK Push",
-        "Paysuit SDK"
+        "coffee market",
+        "East Africa coffee",
+        "coffee exhibitors",
+        "coffee suppliers",
+        "specialty coffee",
+        "coffee roasters",
+        "coffee traders",
+        "coffee directory",
+        "Ethiopia coffee",
+        "Kenya coffee",
+        "Rwanda coffee",
+        "Uganda coffee",
+        "fair trade coffee",
+        "organic coffee"
     ],
 
     authors: [
@@ -81,8 +83,8 @@ export const metadata: Metadata = {
         },
     ],
 
-    creator: "Paysuit Fintech",
-    publisher: "Paysuit Fintech",
+    creator: "East Africa Coffee Market",
+    publisher: "East Africa Coffee Market",
 
     icons: {
         icon: [
@@ -101,33 +103,33 @@ export const metadata: Metadata = {
 
     openGraph: {
         type: "website",
-        url: "https://paysuit.aistartupclub.com",
-        title: "Paysuit — M-Pesa Payments for Developers",
+        url: "https://eacoffeemarket.com",
+        title: "East Africa Coffee Market — Exhibitor Directory",
         description:
-            "The fastest way to integrate M-Pesa payments. Clean APIs, instant settlement, built for developers.",
-        siteName: "Paysuit",
+            "Discover premium coffee exhibitors and specialty suppliers from across East Africa.",
+        siteName: "East Africa Coffee Market",
         images: [
             {
-                url: "https://paysuit.aistartupclub.com/og-image.png",
+                url: "https://eacoffeemarket.com/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Paysuit — M-Pesa Payments for Developers"
+                alt: "East Africa Coffee Market — Exhibitor Directory"
             }
         ],
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "Paysuit — M-Pesa Payments for Developers",
+        title: "East Africa Coffee Market",
         description:
-            "Integrate M-Pesa payments in minutes using clean APIs and modern SDKs.",
-        images: ["https://paysuit.aistartupclub.com/og-image.png"],
-        creator: "@paysuit"
+            "Connect with premium coffee exhibitors and suppliers from East Africa.",
+        images: ["https://eacoffeemarket.com/og-image.png"],
+        creator: "@eacoffeemarket"
     },
 
-    category: "finance",
+    category: "business",
     alternates: {
-        canonical: "https://paysuit.aistartupclub.com/"
+        canonical: "https://eacoffeemarket.com/"
     },
 
     appleWebApp: {
@@ -174,17 +176,18 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "SoftwareApplication",
-                    name: "Paysuit",
-                    applicationCategory: "FinanceApplication",
-                    operatingSystem: "Web",
+                    "@type": "LocalBusiness",
+                    name: "East Africa Coffee Market",
                     description:
-                        "Developer-first M-Pesa payments API. Integrate mobile money instantly using secure, modern SDKs.",
-                    url: "https://paysuit.aistartupclub.com",
+                        "Comprehensive directory of premium coffee exhibitors and suppliers from across East Africa.",
+                    url: "https://eacoffeemarket.com",
+                    areaServed: ["Ethiopia", "Kenya", "Rwanda", "Uganda", "Tanzania", "Cameroon"],
+                    serviceType: "Coffee Trading Directory",
+                    image: "https://eacoffeemarket.com/og-image.png",
                     creator: {
                         "@type": "Organization",
-                        name: "Paysuit Fintech",
-                        url: "https://paysuit.aistartupclub.com"
+                        name: "East Africa Coffee Market",
+                        url: "https://eacoffeemarket.com"
                     }
                 }),
             }}
