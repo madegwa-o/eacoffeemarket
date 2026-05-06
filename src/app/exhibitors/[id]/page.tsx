@@ -22,8 +22,8 @@ Our coffee is characterized by bright acidity, complex fruit notes (ranging from
     booth_number: 'A-102',
     country: 'Ethiopia',
     website: 'https://example.com',
-    industries: ['Specialty Coffee', 'Direct Trade', 'Organic', 'Arabica', 'Yirgacheffe'],
-    looking_for: ['Distributors', 'Specialty Coffee Shops', 'Roasters', 'International Partners'],
+    industries: ['Specialty Coffee', 'Direct Trade', 'Organic'],
+    looking_for: ['Distributors', 'Cafes'],
   },
   '2': {
     _id: '2',
@@ -40,8 +40,8 @@ Whether you're a café owner looking for distinctive single-origin offerings or 
     booth_number: 'B-205',
     country: 'Kenya',
     website: 'https://example.com',
-    industries: ['Specialty Coffee', 'Roastery', 'Fair Trade', 'AA Grade', 'Small Batch'],
-    looking_for: ['Retailers', 'Restaurants', 'Cafes', 'Online Retailers'],
+    industries: ['Specialty Coffee', 'Roastery', 'Fair Trade'],
+    looking_for: ['Retailers', 'Restaurants'],
   },
   '3': {
     _id: '3',
@@ -60,8 +60,8 @@ Our coffees have won numerous international competitions and are featured in spe
     booth_number: 'C-301',
     country: 'Rwanda',
     website: 'https://example.com',
-    industries: ['Export', 'Sustainable Coffee', 'Wholesale', 'Arabica', 'Specialty'],
-    looking_for: ['Importers', 'Roasters', 'Distributors', 'Coffee Traders'],
+    industries: ['Export', 'Sustainable Coffee', 'Wholesale'],
+    looking_for: ['Importers', 'Roasters'],
   },
   '4': {
     _id: '4',
@@ -80,8 +80,44 @@ Partnership with us means investing in the future of African coffee while securi
     booth_number: 'D-104',
     country: 'Uganda',
     website: 'https://example.com',
-    industries: ['Innovation', 'Sustainable Farming', 'Processing', 'Robusta', 'Training'],
-    looking_for: ['Partners', 'Investors', 'Roasters', 'Impact Investors'],
+    industries: ['Innovation', 'Sustainable Farming', 'Processing'],
+    looking_for: ['Partners', 'Investors'],
+  },
+  '5': {
+    _id: '5',
+    company_name: 'Tanzania Coffee Equipment Supplier',
+    logo_url: '/coffee-5.jpg',
+    description: 'Premium coffee equipment and machinery for roasters and processors. Backed by 20 years of industry expertise.',
+    long_description: `Tanzania Coffee Equipment Supplier has been providing industry-leading equipment and machinery to coffee roasters and processors across Africa for over two decades.
+
+Our product range includes industrial roasting machines, green bean processors, cupping labs, and complete roastery setups. We partner with world-renowned equipment manufacturers to bring cutting-edge technology to the East African market.
+
+We understand the unique needs of African coffee businesses and provide customized solutions with ongoing technical support. Our team has extensive experience in equipment selection, installation, and training.
+
+From small artisanal roasteries to large commercial operations, we have the expertise and products to support your growth. We also provide maintenance services and spare parts to keep your equipment running smoothly.`,
+    booth_number: 'E-203',
+    country: 'Tanzania',
+    website: 'https://example.com',
+    industries: ['Equipment', 'Machinery', 'B2B Solutions'],
+    looking_for: ['Coffee Businesses', 'Distributors'],
+  },
+  '6': {
+    _id: '6',
+    company_name: 'Cameroon Premium Robusta',
+    logo_url: '/coffee-6.jpg',
+    description: 'High-quality Robusta beans from Cameroon. Perfect for espresso blends and instant coffee production.',
+    long_description: `Cameroon Premium Robusta is one of West Africa's leading suppliers of high-quality Robusta coffee beans. We specialize in sourcing and processing beans specifically suited for espresso blends and instant coffee production.
+
+Our Robusta beans are known for their full body, rich crema, and bold flavor profile. They're grown in the ideal conditions of Cameroon's volcanic highlands and processed using traditional methods combined with modern quality control.
+
+We work with cooperative farmers throughout Cameroon's coffee regions, ensuring consistent quality and supporting sustainable farming practices. Our beans are certified and tested to meet international standards.
+
+Whether you're blending for espresso or producing instant coffee, our Robusta beans provide the body and stability your products need. We offer flexible quantities and custom processing options.`,
+    booth_number: 'F-105',
+    country: 'Cameroon',
+    website: 'https://example.com',
+    industries: ['Robusta', 'Espresso', 'Blending'],
+    looking_for: ['Blenders', 'Instant Coffee Makers'],
   },
 }
 
