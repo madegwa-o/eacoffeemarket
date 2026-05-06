@@ -2,15 +2,17 @@ import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import { User, Role } from "@/models/User";
+import { handler as authHandler } from "@/app/api/auth/[...nextauth]/route";
 
 export async function POST(request: NextRequest) {
-    const session = await getServerSession();
-
-    if (!session?.user?.id) {
-        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
     try {
+        const session = await getServerSession({
+            handlers: [authHandler],
+        });
+
+        if (!session?.user?.id) {
+            return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+        }
         const body = await request.json();
         const { companyName, phone, website, description } = body;
 
@@ -69,11 +71,18 @@ export async function POST(request: NextRequest) {
             },
             { status: 201 }
         );
-    } catch (error) {
-        console.error("Exhibitor role request error:", error);
+        } catch (error) {
+            console.error("Exhibitor role request error:", error);
+            return NextResponse.json(
+                { message: "Failed to process exhibitor role request" },
+                { status: 500 }
+            );
+        }
+    } catch (sessionError) {
+        console.error("Session error:", sessionError);
         return NextResponse.json(
-            { message: "Failed to process exhibitor role request" },
-            { status: 500 }
+            { message: "Unauthorized" },
+            { status: 401 }
         );
     }
 }

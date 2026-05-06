@@ -50,7 +50,7 @@ export default function AccountPage() {
 
   // Profile state
   const [profile, setProfile] = useState<UserProfile | null>(null)
-  const [isLoadingProfile, setIsLoadingProfile] = useState(false)
+  const [isLoadingProfile, setIsLoadingProfile] = useState(true)
   const [profileError, setProfileError] = useState<string | null>(null)
   const [profileSuccess, setProfileSuccess] = useState<string | null>(null)
   const [editName, setEditName] = useState('')
@@ -79,9 +79,12 @@ export default function AccountPage() {
 
   // Fetch user profile
   useEffect(() => {
-    if (status === 'authenticated') {
-      fetchProfile()
+    const loadProfile = async () => {
+      if (status === 'authenticated') {
+        await fetchProfile()
+      }
     }
+    loadProfile()
   }, [status])
 
   const fetchProfile = async () => {

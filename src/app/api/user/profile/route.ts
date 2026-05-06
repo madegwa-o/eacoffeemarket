@@ -2,13 +2,17 @@ import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import { User } from "@/models/User";
+import { handler as authHandler } from "@/app/api/auth/[...nextauth]/route";
 
 export async function GET(request: NextRequest) {
-    const session = await getServerSession();
+    try {
+        const session = await getServerSession({
+            handlers: [authHandler],
+        });
 
-    if (!session?.user?.id) {
-        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
+        if (!session?.user?.id) {
+            return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+        }
 
     try {
         await connectToDatabase();
@@ -18,32 +22,40 @@ export async function GET(request: NextRequest) {
             return NextResponse.json({ message: "User not found" }, { status: 404 });
         }
 
-        return NextResponse.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            phone: user.phone || "",
-            address: user.address || "",
-            roles: user.roles,
-            accountType: user.accountType,
-        });
-    } catch (error) {
-        console.error("Profile fetch error:", error);
+            return NextResponse.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                phone: user.phone || "",
+                address: user.address || "",
+                roles: user.roles,
+                accountType: user.accountType,
+            });
+        } catch (error) {
+            console.error("Profile fetch error:", error);
+            return NextResponse.json(
+                { message: "Failed to fetch profile" },
+                { status: 500 }
+            );
+        }
+    } catch (sessionError) {
+        console.error("Session error:", sessionError);
         return NextResponse.json(
-            { message: "Failed to fetch profile" },
-            { status: 500 }
+            { message: "Unauthorized" },
+            { status: 401 }
         );
     }
 }
 
 export async function PUT(request: NextRequest) {
-    const session = await getServerSession();
-
-    if (!session?.user?.id) {
-        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
     try {
+        const session = await getServerSession({
+            handlers: [authHandler],
+        });
+
+        if (!session?.user?.id) {
+            return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+        }
         const body = await request.json();
         const { name, phone, address } = body;
 
@@ -93,11 +105,18 @@ export async function PUT(request: NextRequest) {
             roles: user.roles,
             accountType: user.accountType,
         });
-    } catch (error) {
-        console.error("Profile update error:", error);
+        } catch (error) {
+            console.error("Profile update error:", error);
+            return NextResponse.json(
+                { message: "Failed to update profile" },
+                { status: 500 }
+            );
+        }
+    } catch (sessionError) {
+        console.error("Session error:", sessionError);
         return NextResponse.json(
-            { message: "Failed to update profile" },
-            { status: 500 }
+            { message: "Unauthorized" },
+            { status: 401 }
         );
     }
 }
