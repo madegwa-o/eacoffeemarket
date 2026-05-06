@@ -121,8 +121,9 @@ Whether you're blending for espresso or producing instant coffee, our Robusta be
   },
 }
 
-export default function ExhibitorDetailsPage({ params }: { params: { id: string } }) {
-  const exhibitor = mockExhibitors[params.id]
+export default async function ExhibitorDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const exhibitor = mockExhibitors[id]
 
   if (!exhibitor) {
     return (
