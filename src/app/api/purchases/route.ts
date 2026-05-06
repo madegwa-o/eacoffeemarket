@@ -18,6 +18,8 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
     const session = await getServerSession();
+
+    console.log("user roles:", session?.user?.roles);
     if (!session?.user?.id || !session.user.roles?.includes(Role.BUYER)) {
         return NextResponse.json({ message: "Only buyers can purchase." }, { status: 403 });
     }
