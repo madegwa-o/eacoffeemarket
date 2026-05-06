@@ -113,7 +113,7 @@ export default function AccountPage() {
           <p className="text-muted-foreground">Manage your profile, API keys, and account settings.</p>
         </div>
 
-        <Tabs defaultValue="setup" className="space-y-6">
+        <Tabs defaultValue="profile" className="space-y-6">
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="share">Share</TabsTrigger>
