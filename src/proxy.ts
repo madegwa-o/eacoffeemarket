@@ -6,10 +6,9 @@ import { NextResponse } from "next/server"
 const PUBLIC_ROUTES = [
     "/",
     "/api/images/**",
-    "/daraja-tester",
+    "/buyer-dashboard",
+    "/exhibitor-dashboard",
     "/signin",
-    "/pricing",
-    "/docs",
     "/api/mpesa/auth",
     "/api/mpesa/proxy",
     "/api/payments/direct/callback",

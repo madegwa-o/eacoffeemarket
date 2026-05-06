@@ -5,14 +5,15 @@ import { Schema, model, models, Types, Document } from "mongoose";
 import bcrypt from "bcryptjs";
 
 export enum Role {
-	ADMIN = "ADMIN",
-	MERCHANT = "MERCHANT",
+	BUYER = "BUYER",
+	EXHIBITOR = "EXHIBITOR",
 	USER = "USER",
 }
 
 export enum AccountType {
 	PREMIUM = "PREMIUM",
 	FREEMIUM = "FREEMIUM",
+
 }
 
 export interface IUser extends Document {

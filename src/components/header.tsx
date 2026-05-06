@@ -42,11 +42,8 @@ export function Header() {
     //added the route
     const navLinks = [
         { label: "Home", href: "/" },
-        { label: "Daraja Tester", href: "/daraja-tester" },
-        { label: "Wallet", href: "/wallet" },
-        { label: "Transactions", href: "/transactions" },
-        { label: "Pricing", href: "/pricing" },
-        { label: "Docs", href: "/docs" },
+        { label: "exhibitor dashboard", href: "/exhibitor-dashboard" },
+        { label: "buyer dashboard", href: "/buyer-dashboard"},
         { label: "My Account", href: "/account" },
     ]
 
