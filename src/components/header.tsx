@@ -40,12 +40,12 @@ export function Header() {
     }, [isMenuOpen])
 
     //added the route
-    const navLinks = [
-        { label: "Home", href: "/" },
-        { label: "exhibitor dashboard", href: "/exhibitor-dashboard" },
-        { label: "buyer dashboard", href: "/buyer-dashboard"},
-        { label: "My Account", href: "/account" },
-    ]
+        const navLinks = [
+            { label: "Home", href: "/" },
+            { label: "exhibitor dashboard", href: "/exhibitor-dashboard" },
+            { label: "buyer dashboard", href: "/buyer-dashboard"},
+            { label: "My Account", href: "/account" },
+        ]
 
     const handleSignOut = async () => {
         await signOut({ callbackUrl: "/" })
@@ -67,7 +67,7 @@ export function Header() {
         >
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 <Link href="/" className="flex items-center gap-2">
-                    <span className="font-bold text-xl">Paysuit</span>
+                    <span className="font-bold text-xl">EACM</span>
                 </Link>
 
                 {/* Desktop Navigation */}
